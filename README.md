@@ -20,7 +20,7 @@ Planning to use:
 - Bootstrap
 
 ### ERD
-![ERD](/assets/Final-Project-Fiber-Tracker-Page-2.jpg)
+![ERD](/assets/Final-Project-Fiber-Tracker-Page-3.drawio.png)
 
 ### Wireframe
 ![Wireframes](/assets/fiber-art-figma.png)
