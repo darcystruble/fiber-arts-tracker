@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import BodyLabel from './components/BodyLabel'
 import Main from './pages/Main'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <div className="body-container">
         <BodyLabel />
         <Main />
+        <Footer />
       </div>
     </div>
   )

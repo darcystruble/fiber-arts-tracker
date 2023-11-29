@@ -1,6 +1,6 @@
 /* Across Site Styling */
 :root {
-    --bg-color: #f2f2f2;
+    --bg-color: #ffffff;
 }
 
 body {
@@ -25,6 +25,7 @@ body {
 }
 
 .body-container {
+    position: relative;
     background-color: var(--bg-color);
     width: 100%;
     /* flex-grow: 5; */
@@ -32,5 +33,13 @@ body {
 
 .main-container {
     width: 100%;
-    margin: 10px;
+    /* margin: 10px; */
+}
+
+.footer-container {
+    position: absolute;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
 }

@@ -1,4 +1,3 @@
-import Footer from "../components/Footer"
 import Tabs from '../components/Tabs'
 
 export default function Home () {
@@ -10,7 +9,6 @@ export default function Home () {
             <h2>Goals</h2>
             <h2>Projects</h2>
             <h2>Stash</h2>
-            <Footer />
         </div>
     )
 }
