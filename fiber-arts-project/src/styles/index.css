@@ -1,0 +1,36 @@
+/* Across Site Styling */
+:root {
+    --bg-color: #f2f2f2;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+/* App Containers */
+
+.app-container {
+    background-color: pink;
+    min-height: 100vh;
+    display: flex;
+    gap: 10px;
+}
+
+.header-container {
+    padding:  0 20px;
+    background-color: #3f2d3e;
+    color: #f2f2f2;
+    /* width: 300px; */
+}
+
+.body-container {
+    background-color: var(--bg-color);
+    width: 100%;
+    /* flex-grow: 5; */
+}
+
+.main-container {
+    width: 100%;
+    margin: 10px;
+}
