@@ -1,0 +1,51 @@
+.nav-container {
+    /* margin-top: 30px; */
+    width: 200px;
+    box-sizing: border-box;
+}
+
+/* At full screen */
+
+
+/* Cell Phone Hamburger Menu */
+
+@media screen and (max-width: 420px) {
+    .burger-menu {
+        height: fit-content;
+        width: fit-content;
+    }
+    .burger-bar {
+        background-color: white;
+        height: 7px;
+        width: 50px;
+        margin: 7px;
+        border-radius: 20px;
+    }
+    .hidden {
+        display: none;
+    }
+    .visible {
+        display: inherit;
+    }
+    /* Animations */
+
+    .burger-bar.clicked:nth-child(1){
+        transform: rotate(45deg) translate(.75rem, 1.25rem);
+        transition: ease-out .3s;
+    }
+
+    .burger-bar.clicked:nth-child(2){
+        transform: scale(0);
+        transition: ease-out .3s;
+    }
+
+    .burger-bar.clicked:nth-child(3){
+        transform: rotate(-45deg) translate(0rem, -.5rem);
+        transition: ease-out .3s;
+    }
+
+    .burger-bar.unclicked{
+        transform: rotate(0) translate(0);
+        transition: ease-out .3s;
+    }
+}

@@ -1,27 +1,33 @@
 /* Across Site Styling */
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
     --bg-color: #ffffff;
+    --dark-bg-color: #3f2d3e;
+    /* fonts */
+    --main-font: 'Poppins', sans-serif;
+    --accent-font: 'Lora', serif;
 }
 
 body {
     margin: 0;
     background-color: var(--bg-color);
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--accent-font);
+    font-weight: 700;
+    font-style: italic;
 }
 
 /* App Containers */
 
 .app-container {
-    background-color: pink;
     min-height: 100vh;
     display: flex;
-    gap: 10px;
-}
-
-.header-container {
-    padding:  0 20px;
-    background-color: #3f2d3e;
-    color: #f2f2f2;
-    /* width: 300px; */
+    /* gap: 10px; */
 }
 
 .body-container {
@@ -33,7 +39,6 @@ body {
 
 .main-container {
     width: 100%;
-    /* margin: 10px; */
 }
 
 .footer-container {
@@ -42,4 +47,13 @@ body {
     bottom: 0;
     width: 100%;
     background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 420px) {
+    .app-container {
+        max-width: 100vw;
+        position: relative;
+        flex-direction: column;
+        background-color: pink;
+    }
 }
