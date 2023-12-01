@@ -1,5 +1,6 @@
 import './component-styles/NavList.css'
 import { useState } from 'react'
+import Clickable from '../atoms/Clickable'
 
 export default function NavList () {
 
@@ -28,10 +29,30 @@ export default function NavList () {
                 <div className={burgerClass}></div>
             </div>
             <div className={menuClass}>
-                <h2>Account</h2>
                 <h2>Projects</h2>
+                <div className="clickables">
+                    <Clickable name={'Add a project'} />
+                    <Clickable name={'In Progress'} />
+                    <Clickable name={'Completed'} />
+                    <Clickable name={'View All'} />
+                </div>
                 <h2>Stash</h2>
+                <div className="clickables">
+                    <Clickable name={'Add Yarn'} />
+                    <Clickable name={'Add Fiber'} />
+                    <Clickable name={'Yarn Stash'} />
+                    <Clickable name={'Fiber Stash'} />
+                </div>
                 <h2>Goals</h2>
+                <div className="clickables">
+                    <Clickable name={'Set Goals'} />
+                    <Clickable name={'Stats'} />
+                </div>
+                <h2>Account</h2>
+                <div className="clickables">
+                    <Clickable name={'View Profile'} />
+                    <Clickable name={'Sign Out'} />
+                </div>
             </div>
         </div>
     )

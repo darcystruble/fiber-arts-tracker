@@ -4,6 +4,7 @@
     justify-content: space-between;
     width: 100%;
     background-color: #D9DBDF;
+    box-sizing: border-box;
 }
 
 /* Styling active/inactive tabs */
@@ -13,9 +14,6 @@
     padding: 20px;
     margin: 0 2px;
     border-radius: 20px 20px 0 0;
-    /* font-weight: 700; */
-    /* border: 2px solid grey;
-    border-bottom: none; */
 }
 
 .active {
@@ -28,4 +26,11 @@
     color: var(--bg-color);
     /* background-color: #BA6458; */
     background-color: #a6a9ad;
+}
+
+@media screen and (max-width: 420px) {
+    .active, .inactive {
+        padding: 20px 10px;
+    }
+    
 }
