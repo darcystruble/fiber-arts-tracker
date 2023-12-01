@@ -1,11 +1,15 @@
 import './pages-styles/Projects.css'
-import Current from "../components/Current"
+import SeeAll from '../atoms/SeeAll'
+// import Loader from '../atoms/Loader'
+import ProjectHome from '../organisms/ProjectHome'
 
 export default function Projects () {
     return (
         <div className="projects-container">
             <h1>Projects</h1>
-            <Current />
+            <SeeAll />
+            {/* <Loader /> */}
+            <ProjectHome />
         </div>
     )
 }

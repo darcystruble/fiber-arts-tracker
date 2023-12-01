@@ -1,26 +1,11 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import BodyLabel from './components/BodyLabel'
-import Tabs from './components/Tabs'
+import Header from './molecules/Header'
+import BodyLabel from './molecules/BodyLabel'
+import Tabs from './molecules/Tabs'
 import Main from './pages/Main'
-import Footer from './components/Footer'
+import Footer from './molecules/Footer'
+
 
 function App() {
-  // States
-  const [knitting, setKnitting] = useState('')
-  // const [crochet, setCrochet] = useState('')
-
-  // base url for database
-  const baseUrl = 'http://127.0.0.1:8000/'
-
-  useEffect(()=> {
-    const getKnitting = async () => {axios.get(`${baseUrl}projects/kniting/`).then((res)=>{
-      console.log(res)
-    })}
-    getKnitting()
-  }, [])
-
   return (
     <div className='app-container'>
         <Header />

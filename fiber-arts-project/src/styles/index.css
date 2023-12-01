@@ -40,10 +40,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-container {
     width: 100%;
+    min-height: 70vh;
 }
 
 .footer-container {
-    position: absolute;
+    margin-top: auto;
     padding: 20px;
     bottom: 0;
     width: 100%;
