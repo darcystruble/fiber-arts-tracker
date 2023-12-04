@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { yarnAdd } from "../api/YarnAdd";
+import { fiberAdd } from "../api/FiberAdd";
 import Input from "../atoms/Input";
 
-export default function StashAddYarn () {
+export default function StashAddFiber () {
 
     const initialState = {
         user: 1,
@@ -12,8 +12,7 @@ export default function StashAddYarn () {
         amount: 0,
         color: '',
         content: '',
-        yarn_weight: '',
-        yardage: 0,
+        fiber_weight_grams: '',
       };
     const [formState, setFormState] = useState(initialState)
 
@@ -24,31 +23,30 @@ export default function StashAddYarn () {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         console.log(formState)
-        const addNewYarn = async () => {
+        const addNewFiber = async () => {
             try {
-                const createdYarn = await yarnAdd(formState)
-                console.log('Created yarn:', createdYarn)
+                const createdFiber = await fiberAdd(formState)
+                console.log('Created fiber:', createdFiber)
             } catch (error) {
-                console.error('Error creating yarn', error)
+                console.error('Error creating fiber', error)
             }
         }
-        addNewYarn()
+        addNewFiber()
     }
 
     // (props:{html: string, iType: string, iId: string, iText: string, handleChange: () => void})
     return (
         <div className="add-container">
-            <h1>Add Yarn to Stash</h1>
+            <h1>Add Fiber to Stash</h1>
             <form onSubmit={handleSubmit}>
-                <Input lHtml={'name'} lText={'Yarn Name'} iType={'text'} iId={'name'} iText={'yarn name'} changeFunc={handleChange} />
-                <Input lHtml={'brand'} lText={'Brand'} iType={'text'} iId={'brand'} iText={'yarn brand'} changeFunc={handleChange} />
+                <Input lHtml={'name'} lText={'Fiber Name'} iType={'text'} iId={'name'} iText={'fiber name'} changeFunc={handleChange} />
+                <Input lHtml={'brand'} lText={'Brand'} iType={'text'} iId={'brand'} iText={'fiber brand'} changeFunc={handleChange} />
                 {/* <label htmlFor="image">Image</label> */}
                 {/* <input id='image' type="file" onChange={handleChange} /> */}
-                <Input lHtml={'amount'} lText={'Number of skiends purchased'} iType={'text'} iId={'amount'} iText={'#'} changeFunc={handleChange} />
+                <Input lHtml={'amount'} lText={'Number of braids/bags purchased'} iType={'text'} iId={'amount'} iText={'#'} changeFunc={handleChange} />
                 <Input lHtml={'color'} lText={'Color'} iType={'text'} iId={'color'} iText={'color/colors'} changeFunc={handleChange} />
                 <Input lHtml={'content'} lText={'Fiber Content'} iType={'text'} iId={'content'} iText={'fiber content'} changeFunc={handleChange} />
-                <Input lHtml={'yarn_weight'} lText={'Yarn Weight'} iType={'text'} iId={'yarn_weight'} iText={'fingering, sport, dk, worseted...'} changeFunc={handleChange} />
-                <Input lHtml={'yardage'} lText={'Total Yardage in Stash'} iType={'text'} iId={'yardage'} iText={'#'} changeFunc={handleChange} />
+                <Input lHtml={'fiber_weight_grams'} lText={'Weight of Fiber in Grams'} iType={'text'} iId={'fiber_weight_grams'} iText={'#'} changeFunc={handleChange} />
                 <button type='submit'>enter</button>
             </form>
         </div>

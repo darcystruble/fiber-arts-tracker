@@ -1,0 +1,42 @@
+.goal-bar-container {
+    margin-bottom: 15px;
+}
+
+.bg-bar {
+    width: 400px;
+    height: 25px;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+}
+
+.bar-outer {
+    display: flex;
+}
+
+.progress {
+    height:25px;
+    border-radius: 20px;
+}
+
+.Knitting {
+    background-color: #BA6458;
+}
+
+.Spinning {
+    background-color: #B23B65;
+}
+
+.Crochet {
+    background-color: #9B0761;
+}
+
+.percent {
+    margin-left: 15px;
+}
+
+
+@media screen and (max-width: 420px) {
+    .bg-bar {
+        width: 300px;
+    }
+}

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
 import './atoms-styles/Clickable.css'
 
-export default function Clickable (props:{name: string, goTo: string}) {
+// Copy and paste into component, change out props:
+{/* <Clickable name={'Add new project'} goTo={'/projects/add/spinning'} styleClass={"project-home-add-link"} /> */}
+
+export default function Clickable (props:{name: string, goTo: string, styleClass: string}) {
     console.log(props.name)
     return (
-        <div>
-            <Link to={props.goTo} className="nav-links">
+        <div className={`${props.styleClass}-outer`}>
+            <Link to={props.goTo} className={props.styleClass}>
                 <div>{props.name}</div>
             </Link>
         </div>

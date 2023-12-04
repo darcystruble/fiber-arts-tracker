@@ -29,7 +29,7 @@ export default function Fiber () {
                     <div key={fib.id} className="card">
                         <h4>{fib.name}</h4>
                         <div className="img-holder">
-                            <img src={fib.image} alt={fib.name} className="img" />
+                            {fib.image ? <img src={fib.image} alt={fib.name} className="img" /> : null}
                         </div>
                         <div>{fib.brand}</div>
                         <div>{fib.content}</div>

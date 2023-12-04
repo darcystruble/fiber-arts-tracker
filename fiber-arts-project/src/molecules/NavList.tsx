@@ -32,27 +32,30 @@ export default function NavList () {
             <div className={menuClass}>
                 <Link to='/projects'><h2>Projects</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Add a project'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'In Progress'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'Completed'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'View All'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Add a project'} goTo={'/projects/add'} styleClass={"nav-links"} />
+                    {/* <Clickable name={'In Progress'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Completed'} goTo={'/stash/addyarn'} /> */}
+                    <Clickable name={'Knitting Projects'} goTo={'/projects/knitting'} styleClass={"nav-links"} />
+                    <Clickable name={'Spinning Projects'} goTo={'/projects/spinning'} styleClass={"nav-links"} />
+                    <Clickable name={'Crochet Projects'} goTo={'/projects/crochet'} styleClass={"nav-links"} />
+                    <Clickable name={'View All'} goTo={'/projects'} styleClass={"nav-links"} />
                 </div>
                 <Link to='/stash'><h2>Stash</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Add Yarn'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'Add Fiber'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'Yarn Stash'} goTo={'/stash/yarn'} />
-                    <Clickable name={'Fiber Stash'} goTo={'/stash/fiber'} />
+                    <Clickable name={'Add Yarn'} goTo={'/stash/addyarn'} styleClass={"nav-links"} />
+                    <Clickable name={'Add Fiber'} goTo={'/stash/addfiber'} styleClass={"nav-links"} />
+                    <Clickable name={'Yarn Stash'} goTo={'/stash/yarn'} styleClass={"nav-links"} />
+                    <Clickable name={'Fiber Stash'} goTo={'/stash/fiber'} styleClass={"nav-links"} />
                 </div>
                 <Link to='/goals'><h2>Goals</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Set Goals'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'Stats'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Set Goals'} goTo={'/stash/addyarn'} styleClass={"nav-links"} />
+                    <Clickable name={'Stats'} goTo={'/stash/addyarn'} styleClass={"nav-links"} />
                 </div>
                 <h2>Account</h2>
                 <div className="clickables">
-                    <Clickable name={'View Profile'} goTo={'/stash/addyarn'} />
-                    <Clickable name={'Sign Out'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'View Profile'} goTo={'/stash/addyarn'} styleClass={"nav-links"} />
+                    <Clickable name={'Sign Out'} goTo={'/stash/addyarn'} styleClass={"nav-links"} />
                 </div>
             </div>
         </div>

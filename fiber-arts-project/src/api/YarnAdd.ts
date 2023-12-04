@@ -5,7 +5,7 @@ export const yarnAdd = async (postData: any) => {
         const res = await api.post('yarn/', postData)
         return res.data
     } catch (e) {
-        console.error('Error fetching users:', e)
+        console.error('Error creating yarn:', e)
         throw e
     }
 }

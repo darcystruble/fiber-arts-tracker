@@ -1,0 +1,15 @@
+.input-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-container label {
+    font-size: 1.2rem;
+}
+
+.input-container input {
+    margin-left: 10px;
+    padding-left: 10px;
+    height: 30px;
+    border: 2px solid #f2f2f2;
+}

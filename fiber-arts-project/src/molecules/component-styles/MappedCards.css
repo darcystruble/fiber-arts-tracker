@@ -27,3 +27,10 @@ h3 {
 .img {
     width: 180px;
 }
+
+@media screen and (max-width: 420px) {
+    .card-holder {
+        flex-direction: column;
+        align-items: center;
+    }
+}

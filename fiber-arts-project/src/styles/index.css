@@ -55,8 +55,16 @@ h1, h2 {
     background-color: #f2f2f2;
 }
 
-.add-yarn-container {
+.add-container {
     padding: 20px;
+}
+
+.add-container button {
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    border: 2px solid pink;
+    border-radius: 14px;
 }
 
 @media screen and (max-width: 420px) {
