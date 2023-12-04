@@ -1,8 +1,12 @@
 /* Across Site Styling */
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    box-sizing: border-box;
+}
 
 :root {
+    /* colors */
     --bg-color: #ffffff;
     --dark-bg-color: #3f2d3e;
     /* fonts */
@@ -16,7 +20,7 @@ body {
     font-family: var(--main-font);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
     font-family: var(--accent-font);
     font-weight: 700;
     font-style: italic;
@@ -32,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .body-container {
-    position: relative;
+    /* position: relative; */
     background-color: var(--bg-color);
     width: 100%;
     min-height: 100vh;
@@ -49,6 +53,10 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     width: 100%;
     background-color: #f2f2f2;
+}
+
+.add-yarn-container {
+    padding: 20px;
 }
 
 @media screen and (max-width: 420px) {

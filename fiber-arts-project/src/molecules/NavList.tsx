@@ -1,5 +1,6 @@
 import './component-styles/NavList.css'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Clickable from '../atoms/Clickable'
 
 export default function NavList () {
@@ -29,29 +30,29 @@ export default function NavList () {
                 <div className={burgerClass}></div>
             </div>
             <div className={menuClass}>
-                <h2>Projects</h2>
+                <Link to='/projects'><h2>Projects</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Add a project'} />
-                    <Clickable name={'In Progress'} />
-                    <Clickable name={'Completed'} />
-                    <Clickable name={'View All'} />
+                    <Clickable name={'Add a project'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'In Progress'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Completed'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'View All'} goTo={'/stash/addyarn'} />
                 </div>
-                <h2>Stash</h2>
+                <Link to='/stash'><h2>Stash</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Add Yarn'} />
-                    <Clickable name={'Add Fiber'} />
-                    <Clickable name={'Yarn Stash'} />
-                    <Clickable name={'Fiber Stash'} />
+                    <Clickable name={'Add Yarn'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Add Fiber'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Yarn Stash'} goTo={'/stash/yarn'} />
+                    <Clickable name={'Fiber Stash'} goTo={'/stash/fiber'} />
                 </div>
-                <h2>Goals</h2>
+                <Link to='/goals'><h2>Goals</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Set Goals'} />
-                    <Clickable name={'Stats'} />
+                    <Clickable name={'Set Goals'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Stats'} goTo={'/stash/addyarn'} />
                 </div>
                 <h2>Account</h2>
                 <div className="clickables">
-                    <Clickable name={'View Profile'} />
-                    <Clickable name={'Sign Out'} />
+                    <Clickable name={'View Profile'} goTo={'/stash/addyarn'} />
+                    <Clickable name={'Sign Out'} goTo={'/stash/addyarn'} />
                 </div>
             </div>
         </div>

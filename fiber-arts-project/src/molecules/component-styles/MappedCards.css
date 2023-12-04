@@ -1,0 +1,29 @@
+h3 {
+    text-decoration: underline;
+}
+
+.item-container {
+    /* background-color: lightblue; */
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.card-holder {
+    /* background-color: pink; */
+    display: flex;
+
+}
+.card-holder h4 {
+    margin-top: 2px;
+}
+.card {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 5px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #a6a9ad;
+}
+.img {
+    width: 180px;
+}

@@ -10,7 +10,7 @@ export default function Crochet () {
         const getCrochet = async () => {
             try {
                 const res = await crochetInfo()
-            setCrochet(res)
+                setCrochet(res)
             } catch (e) {
                 console.error('Error setting spinning', e)
             } finally {
@@ -22,13 +22,16 @@ export default function Crochet () {
     console.log(crochet)
 
     return (
-        <div>
-            <h2>Crochet</h2>
-            {loading ? <Loader/> : <div>
+        <div className='item-container'>
+            <h3>Crochet</h3>
+            {loading ? <Loader/> : <div className="card-holder">
                 {crochet.map((cro)=> (
-                    <div key={cro.id}>
-                        <h3>{cro.name}</h3>
+                    <div key={cro.id} className="card">
+                        <h4>{cro.name}</h4>
                         <div>{cro.start_date}</div>
+                        <div className="img-holder">
+                            {cro.image ? <img src={cro.image} alt={cro.name} className="img" /> : null}
+                        </div>
                     </div>
                 ))}
                 </div>}

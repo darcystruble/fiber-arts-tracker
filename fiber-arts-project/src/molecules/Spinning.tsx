@@ -22,12 +22,15 @@ export default function Spinning () {
     console.log(spinning)
 
     return (
-        <div>
-            <h2>Spinning</h2>
-            {loading ? <Loader/> : <div>
+        <div className='item-container'>
+            <h3>Spinning</h3>
+            {loading ? <Loader/> : <div className="card-holder">
                 {spinning.map((spin)=> (
-                    <div key={spin.id}>
-                        <h3>{spin.name}</h3>
+                    <div key={spin.id} className="card">
+                        <h4>{spin.name}</h4>
+                        <div className="img-holder">
+                            {spin.image ? <img src={spin.image} alt={spin.name} className="img" /> : null}
+                        </div>
                         <div>{spin.start_date}</div>
                     </div>
                 ))}

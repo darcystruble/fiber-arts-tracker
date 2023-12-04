@@ -4,21 +4,10 @@ import Home from "./Home"
 import Goals from "./Goals"
 import Projects from "./Projects"
 import Stash from "./Stash"
-
-// interface KnitInfo {
-//     brand: string
-//     completion_status: boolean
-//     end_date: string
-//     id: number
-//     log: []
-//     name: string
-//     needle_size: string
-//     needle_type: string
-//     pattern_designer: string
-//     pattern_name: string
-//     start_date: string
-//     user: number
-//   }
+import ProjectAdd from "../organisms/ProjectAdd"
+import StashAddYarn from "../organisms/StashAddYarn"
+import Yarn from "../molecules/Yarn"
+import Fiber from "../molecules/Fiber"
 
 export default function Main ({  }) {
     return (
@@ -27,7 +16,11 @@ export default function Main ({  }) {
                 <Route path='/' element={ <Home /> } />
                 <Route path='/goals' element={ <Goals /> } />
                 <Route path='/projects' element={ <Projects /> } />
+                <Route path='/projects/add' element={ <ProjectAdd/>} />
                 <Route path='/stash' element={ <Stash /> } />
+                <Route path='/stash/addyarn' element={ <StashAddYarn /> } />
+                <Route path='/stash/yarn' element={ <Yarn />} />
+                <Route path='/stash/fiber' element={ <Fiber /> } /> 
                 <Route path='/account' element={ <Account /> } />
             </Routes>
         </div>
