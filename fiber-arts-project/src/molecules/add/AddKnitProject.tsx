@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { knitAdd } from "../../api/KnitAdd";
 import Input from "../../atoms/Input";
 
 export default function AddKnitProject () {
-
+    const navigate = useNavigate()
     const initialState = {
         user: 1,
         name: '',
@@ -34,6 +35,7 @@ export default function AddKnitProject () {
             }
         }
         addNewKnit()
+        navigate('/projects/knitting', { replace: true })
     }
 
     return (

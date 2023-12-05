@@ -1,14 +1,14 @@
 import './Details.css'
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { knitOne, knitDelete } from "../../api/KnitEditDelete"
+import { spinOne, spinDelete } from "../../api/SpinEditDelete"
 // import moment from 'moment'
 
-export default function KnitDetails () {
-    type KnitParams = {
+export default function SpinDetails () {
+    type spingParams = {
         id: string
     }
-    let { id } = useParams<KnitParams>()
+    let { id } = useParams<spingParams>()
     console.log(id)
     const navigate = useNavigate()
 
@@ -19,10 +19,10 @@ export default function KnitDetails () {
     useEffect(()=> {
         const getOne = async () => {
             try {
-                const res = await knitOne(`${id}`)
+                const res = await spinOne(`${id}`)
                 setDetail(res)
             } catch (e) {
-                console.error('Error getting knitting detail', e)
+                console.error('Error getting spingting detail', e)
             }
         }
         getOne()
@@ -34,7 +34,7 @@ export default function KnitDetails () {
     // delete one
     const deleteOne = () => {
         const findAndDelete = async () => {
-            await knitDelete(`${id}`)
+            await spinDelete(`${id}`)
         }
         findAndDelete()
         navigate('..', { relative: 'path' })

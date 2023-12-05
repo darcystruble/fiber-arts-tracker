@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { fiberAdd } from "../api/FiberAdd";
 import Input from "../atoms/Input";
 
 export default function StashAddFiber () {
-
+    const navigate = useNavigate()
     const initialState = {
         user: 1,
         name: '',
@@ -32,6 +33,7 @@ export default function StashAddFiber () {
             }
         }
         addNewFiber()
+        navigate('/stash/fiber', { replace: true})
     }
 
     // (props:{html: string, iType: string, iId: string, iText: string, handleChange: () => void})

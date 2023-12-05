@@ -1,6 +1,6 @@
 .detail-container {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 .detail {
     margin-bottom: 10px;
@@ -8,4 +8,10 @@
 
 .img-details .img {
     width: 300px;
+}
+
+.project-details {
+    /* margin: auto 20px; */
+    display: flex;
+    flex-direction: column;
 }

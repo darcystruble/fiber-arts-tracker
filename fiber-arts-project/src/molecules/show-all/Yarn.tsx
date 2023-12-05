@@ -1,5 +1,6 @@
 import './MappedCards.css'
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 import { yarnInfo } from '../../api/Yarn.ts'
 import Loader from "../../atoms/Loader.tsx"
 
@@ -28,12 +29,14 @@ export default function Yarn () {
             {loading ? <Loader/> : <div className="card-holder">
                 {yarn.map((yar)=> (
                     <div key={yar.id} className="card">
+                        <Link to={`/stash/yarn/${yar.id}`}>
                         <h4>{yar.name}</h4>
                         <div className="img-holder">
                             {yar.image ? <img src={yar.image} alt={yar.name} className="img" /> : null}
                         </div>
                         <div>{yar.brand}</div>
                         <div>{yar.content}</div>
+                        </Link>
                     </div>
                 ))}
                 </div>}

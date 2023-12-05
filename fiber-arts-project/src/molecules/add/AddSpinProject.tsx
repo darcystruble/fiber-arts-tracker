@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { spinAdd } from "../../api/SpinAdd";
 import Input from "../../atoms/Input";
 
 export default function AddSpinProject () {
-
+    const navigate = useNavigate()
     const initialState = {
         user: 1,
         name: '',
@@ -32,6 +33,7 @@ export default function AddSpinProject () {
             }
         }
         addNewSpin()
+        navigate('/projects/spinning', { replace: true })
     }
 
     return (

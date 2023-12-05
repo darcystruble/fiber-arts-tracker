@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { crochetAdd } from "../../api/CrochetAdd";
 import Input from "../../atoms/Input";
 
 export default function AddCrochetProject () {
-
+    const navigate = useNavigate()
     const initialState = {
         user: 1,
         name: '',
@@ -33,6 +34,7 @@ export default function AddCrochetProject () {
             }
         }
         addNewCrochet()
+        navigate('/projects/crochet', { replace: true })
     }
 
     return (

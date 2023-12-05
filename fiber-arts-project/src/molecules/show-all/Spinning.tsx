@@ -1,5 +1,6 @@
 import './MappedCards.css'
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 import { spinInfo } from "../../api/SpinInfo"
 import Loader from "../../atoms/Loader"
 
@@ -28,11 +29,13 @@ export default function Spinning () {
             {loading ? <Loader/> : <div className="card-holder">
                 {spinning.map((spin)=> (
                     <div key={spin.id} className="card">
+                        <Link to={`/projects/spinning/${spin.id}`}>
                         <h4>{spin.name}</h4>
                         <div className="img-holder">
                             {spin.image ? <img src={spin.image} alt={spin.name} className="img" /> : null}
                         </div>
                         <div>{spin.start_date}</div>
+                        </Link>
                     </div>
                 ))}
                 </div>}

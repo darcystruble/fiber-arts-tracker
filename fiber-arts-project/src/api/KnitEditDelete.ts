@@ -10,9 +10,9 @@ export const knitOne = async (id: string) => {
     }
 }
 
-export const knitEdit = async (id: string) => {
+export const knitEdit = async (id: string, postData: any) => {
     try {
-        const res = await api.put(`knitting/${id}`)
+        const res = await api.put(`knitting/${id}`, postData)
         return res.data
     } catch (e) {
         console.error('Error view/edit/delete knitting project:', e)

@@ -1,14 +1,14 @@
 import './Details.css'
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { knitOne, knitDelete } from "../../api/KnitEditDelete"
+import { crochetOne, crochetDelete } from "../../api/CrochetEditDelete"
 // import moment from 'moment'
 
-export default function KnitDetails () {
-    type KnitParams = {
+export default function crochetDetails () {
+    type crochetParams = {
         id: string
     }
-    let { id } = useParams<KnitParams>()
+    let { id } = useParams<crochetParams>()
     console.log(id)
     const navigate = useNavigate()
 
@@ -19,10 +19,10 @@ export default function KnitDetails () {
     useEffect(()=> {
         const getOne = async () => {
             try {
-                const res = await knitOne(`${id}`)
+                const res = await crochetOne(`${id}`)
                 setDetail(res)
             } catch (e) {
-                console.error('Error getting knitting detail', e)
+                console.error('Error getting crochetting detail', e)
             }
         }
         getOne()
@@ -34,7 +34,7 @@ export default function KnitDetails () {
     // delete one
     const deleteOne = () => {
         const findAndDelete = async () => {
-            await knitDelete(`${id}`)
+            await crochetDelete(`${id}`)
         }
         findAndDelete()
         navigate('..', { relative: 'path' })
@@ -62,8 +62,8 @@ export default function KnitDetails () {
                 </div>
                 <div className="tools">
                     <h2>Needles Used:</h2>
-                    <div>Needle Sizes: {detail.needle_size}</div>
-                    <div>Needle Type: {detail.needle_type}</div>
+                    <div>Needle Sizes: {detail.hook_size}</div>
+                    {/* <div>Needle Type: {detail.needle_type}</div> */}
                 </div>
             </div>
             <div>

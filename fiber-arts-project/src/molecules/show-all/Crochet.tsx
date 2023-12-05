@@ -1,5 +1,6 @@
 import './MappedCards.css'
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 import { crochetInfo } from '../../api/CrochetInfo'
 import Loader from "../../atoms/Loader"
 
@@ -28,11 +29,13 @@ export default function Crochet () {
             {loading ? <Loader/> : <div className="card-holder">
                 {crochet.map((cro)=> (
                     <div key={cro.id} className="card">
+                        <Link to={`/projects/crochet/${cro.id}`}>
                         <h4>{cro.name}</h4>
                         <div>{cro.start_date}</div>
                         <div className="img-holder">
                             {cro.image ? <img src={cro.image} alt={cro.name} className="img" /> : null}
                         </div>
+                        </Link>
                     </div>
                 ))}
                 </div>}
