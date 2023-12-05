@@ -1,6 +1,7 @@
+import './MappedCards.css'
 import { useEffect, useState } from "react"
-import { yarnInfo } from '../api/Yarn.ts'
-import Loader from "../atoms/Loader"
+import { yarnInfo } from '../../api/Yarn.ts'
+import Loader from "../../atoms/Loader.tsx"
 
 export default function Yarn () {
     const [yarn, setYarn] = useState<any[]>([])

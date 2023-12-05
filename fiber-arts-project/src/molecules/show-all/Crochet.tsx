@@ -1,6 +1,7 @@
+import './MappedCards.css'
 import { useEffect, useState } from "react"
-import { crochetInfo } from '../api/CrochetInfo'
-import Loader from "../atoms/Loader"
+import { crochetInfo } from '../../api/CrochetInfo'
+import Loader from "../../atoms/Loader"
 
 export default function Crochet () {
     const [crochet, setCrochet] = useState<any[]>([])

@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { crochetAdd } from "../api/CrochetAdd";
-import Input from "../atoms/Input";
+import { spinAdd } from "../../api/SpinAdd";
+import Input from "../../atoms/Input";
 
-export default function AddCrochetProject () {
+export default function AddSpinProject () {
 
     const initialState = {
         user: 1,
@@ -11,9 +11,8 @@ export default function AddCrochetProject () {
         // image: '',
         completion_status: false,
         start_date: '',
-        pattern_name: 0,
-        pattern_designer: 0,
-        hook_size: '',
+        ply: 0,
+        singles_weight: 0,
       };
     const [formState, setFormState] = useState(initialState)
 
@@ -24,30 +23,28 @@ export default function AddCrochetProject () {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         console.log(formState)
-        const addNewCrochet = async () => {
+        const addNewSpin = async () => {
             try {
-                const createdCrochet = await crochetAdd(formState)
-                console.log('Created crochet project:', createdCrochet)
+                const createdSpin = await spinAdd(formState)
+                console.log('Created spinning project:', createdSpin)
             } catch (error) {
-                console.error('Error creating crochet project', error)
+                console.error('Error creating spinning project', error)
             }
         }
-        addNewCrochet()
+        addNewSpin()
     }
 
     return (
         <div className="add-container">
-            <h1>Add a new Crochet Project</h1>
+            <h1>Add a new Spinning Project</h1>
             <form onSubmit={handleSubmit}>
                 <Input lHtml={'name'} lText={'Project Name'} iType={'text'} iId={'name'} iText={'project name'} changeFunc={handleChange} />
-                <Input lHtml={'brand'} lText={'Brand'} iType={'text'} iId={'brand'} iText={'pattern brand'} changeFunc={handleChange} />
+                <Input lHtml={'brand'} lText={'Fiber Brand'} iType={'text'} iId={'brand'} iText={'fiber brand'} changeFunc={handleChange} />
                 {/* <label htmlFor="image">Image</label> */}
                 {/* <input id='image' type="file" onChange={handleChange} /> */}
                 <Input lHtml={'start_date'} lText={'Project Start Date'} iType={'date'} iId={'start_date'} iText={''} changeFunc={handleChange} />
-                <Input lHtml={'pattern_name'} lText={'Pattern Name'} iType={'text'} iId={'pattern_name'} iText={'pattern name'} changeFunc={handleChange} />
-                <Input lHtml={'pattern_desinger'} lText={'Pattern Designer'} iType={'text'} iId={'pattern_designer'} iText={'pattern designer'} changeFunc={handleChange} />
-                <Input lHtml={'hook_size'} lText={'Hook Size(s)'} iType={'text'} iId={'hook_size'} iText={'hook size'} changeFunc={handleChange} />
-                
+                <Input lHtml={'singles_weight'} lText={'Singles Weight'} iType={'text'} iId={'singles_weight'} iText={'weight of singles'} changeFunc={handleChange} />
+                <Input lHtml={'ply'} lText={'Number of plies in finished yarn'} iType={'text'} iId={'ply'} iText={'#'} changeFunc={handleChange} />
                 <button type='submit'>enter</button>
             </form>
         </div>

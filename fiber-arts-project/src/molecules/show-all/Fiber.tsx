@@ -1,6 +1,7 @@
+import './MappedCards.css'
 import { useEffect, useState } from "react"
-import { fiberInfo } from '../api/Fiber.ts'
-import Loader from "../atoms/Loader"
+import { fiberInfo } from '../../api/Fiber.ts'
+import Loader from "../../atoms/Loader.tsx"
 
 export default function Fiber () {
     const [fiber, setFiber] = useState<any[]>([])

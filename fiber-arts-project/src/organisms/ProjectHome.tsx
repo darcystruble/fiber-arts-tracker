@@ -1,6 +1,6 @@
-import Knitting from "../molecules/Knitting"
-import Spinning from "../molecules/Spinning"
-import Crochet from "../molecules/Crochet"
+import Knitting from "../molecules/show-all/Knitting"
+import Spinning from "../molecules/show-all/Spinning"
+import Crochet from "../molecules/show-all/Crochet"
 import Clickable from "../atoms/Clickable"
 
 export default function ProjectHome () {

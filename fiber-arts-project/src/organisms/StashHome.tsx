@@ -1,5 +1,5 @@
-import Yarn from "../molecules/Yarn";
-import Fiber from "../molecules/Fiber";
+import Yarn from "../molecules/show-all/Yarn";
+import Fiber from "../molecules/show-all/Fiber";
 
 export default function StashHome () {
     return (

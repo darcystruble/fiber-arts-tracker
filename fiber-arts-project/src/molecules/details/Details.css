@@ -1,0 +1,11 @@
+.detail-container {
+    display: flex;
+    justify-content: space-between;
+}
+.detail {
+    margin-bottom: 10px;
+}
+
+.img-details .img {
+    width: 300px;
+}

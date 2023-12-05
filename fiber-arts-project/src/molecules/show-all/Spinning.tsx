@@ -1,6 +1,7 @@
+import './MappedCards.css'
 import { useEffect, useState } from "react"
-import { spinInfo } from "../api/SpinInfo"
-import Loader from "../atoms/Loader"
+import { spinInfo } from "../../api/SpinInfo"
+import Loader from "../../atoms/Loader"
 
 export default function Spinning () {
     const [spinning, setSpinning] = useState<any[]>([])

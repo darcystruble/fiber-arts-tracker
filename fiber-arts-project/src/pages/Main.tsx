@@ -4,17 +4,18 @@ import Home from "./Home"
 import Goals from "./Goals"
 import Projects from "./Projects"
 import Stash from "./Stash"
-import Knitting from "../molecules/Knitting"
-import Spinning from "../molecules/Spinning"
-import Crochet from "../molecules/Crochet"
+import Knitting from "../molecules/show-all/Knitting"
+import Spinning from "../molecules/show-all/Spinning"
+import Crochet from "../molecules/show-all/Crochet"
+import KnitDetails from "../molecules/details/KnitDetails"
 import ProjectAdd from "../organisms/ProjectAdd"
-import AddKnitProject from "../molecules/AddKnitProject"
-import AddSpinProject from "../molecules/AddSpinProject"
-import AddCrochetProject from "../molecules/AddCrocehtProject"
+import AddKnitProject from "../molecules/add/AddKnitProject"
+import AddSpinProject from "../molecules/add/AddSpinProject"
+import AddCrochetProject from "../molecules/add/AddCrocehtProject"
 import StashAddYarn from "../organisms/StashAddYarn"
 import StashAddFiber from "../organisms/StashAddFiber"
-import Yarn from "../molecules/Yarn"
-import Fiber from "../molecules/Fiber"
+import Yarn from "../molecules/show-all/Yarn"
+import Fiber from "../molecules/show-all/Fiber"
 
 export default function Main ({  }) {
     return (
@@ -28,6 +29,7 @@ export default function Main ({  }) {
                 <Route path='/projects/add/spinning' element={ <AddSpinProject /> } />
                 <Route path='/projects/add/crochet' element={ <AddCrochetProject /> } />
                 <Route path='/projects/knitting' element={ <Knitting /> } />
+                <Route path='/projects/knitting/:id' element={ <KnitDetails />} />
                 <Route path='/projects/spinning' element={ <Spinning /> } />
                 <Route path='/projects/crochet' element={ <Crochet /> } />
                 <Route path='/stash' element={ <Stash /> } />

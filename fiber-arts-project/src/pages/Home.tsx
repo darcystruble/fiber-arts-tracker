@@ -1,10 +1,10 @@
 import './pages-styles/Home.css'
 import GoalBar from '../atoms/GoalBar'
-import Knitting from '../molecules/Knitting'
-import Crochet from '../molecules/Crochet'
-import Spinning from '../molecules/Spinning'
-import Fiber from '../molecules/Fiber'
-import Yarn from '../molecules/Yarn'
+import Knitting from '../molecules/show-all/Knitting'
+import Crochet from '../molecules/show-all/Crochet'
+import Spinning from '../molecules/show-all/Spinning'
+import Fiber from '../molecules/show-all/Fiber'
+import Yarn from '../molecules/show-all/Yarn'
 
 export default function Home () {
     return (
