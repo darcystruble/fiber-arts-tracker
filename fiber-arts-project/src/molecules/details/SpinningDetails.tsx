@@ -1,4 +1,5 @@
 import './Details.css'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { spinOne, spinDelete } from "../../api/SpinEditDelete"
@@ -44,29 +45,44 @@ export default function SpinDetails () {
 
     return (
         <div className="detail-container">
-            <div>
-                <h1 className='detail'>{detail.name}</h1>
-                <div className="img-details">
-                    {detail.image ? <img src={detail.image} alt={detail.name} className="img" /> : null}
-                </div>
-                <div className="pattern-details">
-                    <h2>Pattern Used:</h2>
-                    <div>Pattern: {detail.pattern_name}</div>
-                    <div>Designer: {detail.pattern_designer}</div>
-                </div>
-                <div className="tools">
-                    <h2>Needles Used:</h2>
-                    <div>Needle Sizes: {detail.needle_size}</div>
-                    <div>Needle Type: {detail.needle_type}</div>
-                </div>
+            <div className="detail-header">
+            <div>Viewing details for {detail.name}</div>
+                <Link to={'/projects/spinning'} className='back'>Back to Spinning Projects</Link>
             </div>
-            <div>
-                <div className="project-details">
-                    <h2>Project Details</h2>
-                    <div>Started: {detail.start_date}</div>
-                    <button className="update-project" onClick={()=> setOpenModal(true)}>Update Project</button>
-                    <SpinModal open={openModal} onClose={() => setOpenModal(false)} idKnit={`${id}`} details={detail} />
-                    <button className="delete-project" onClick={()=> {deleteOne()}}>Delete Project</button>
+            <div className="detail-outer">
+                <div>
+                    <div className="img-details">
+                        {detail.image ? <img src={detail.image} alt={detail.name} className="img" /> : null}
+                    </div>
+                </div>
+                <div className='detail-main'>
+                    <h1 className='detail'>{detail.name}</h1>
+
+                    <div className="pattern-details">
+                        <div className='details-title'>Pattern Used:</div>
+                        <div>Pattern: {detail.pattern_name}</div>
+                        <div>Designer: {detail.pattern_designer}</div>
+                    </div>
+                    <div className="tools">
+                        <div className='details-title'>Needles Used:</div>
+                        <div>Needle Sizes: {detail.needle_size}</div>
+                        <div>Needle Type: {detail.needle_type}</div>
+                    </div>
+                </div>
+                
+                <div className='detail-secondary'>
+                    <div className="project-details">
+                        <div className='details-title'>Project Details</div>
+                        
+                        <div>Started: {detail.start_date}</div>
+                        {detail.completion_status ? <div><div>Status: Finished</div><div>Date Finished: {detail.end_date}</div></div> : <div >Status: Active</div>}
+
+                        <div className="buttons">
+                            <button className="detail-btn" onClick={()=> setOpenModal(true)}>Update Project</button>
+                            <SpinModal open={openModal} onClose={() => setOpenModal(false)} idKnit={`${id}`} details={detail} />
+                            <button className="detail-btn delete-btn" onClick={()=> {deleteOne()}}>Delete Project</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

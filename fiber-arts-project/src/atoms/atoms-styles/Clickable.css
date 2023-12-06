@@ -4,10 +4,12 @@
 }
 
 .project-links-outer {
+    display: flex;
+    justify-content: center;
     padding: 10px;
-    margin-bottom: 20px;
-    border: 3px solid #9B0761;
-    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    /* border-radius: 15px; */
 }
 
 .project-links {

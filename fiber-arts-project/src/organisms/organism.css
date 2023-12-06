@@ -8,3 +8,32 @@
     display: flex;
     margin: 20px auto 20px;
 }
+
+/* add projects page */
+.knitting-add-new, .spinning-add-new, .crochet-add-new {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+}
+
+.knitting-add-new {
+    background-image: url('../assets/knitting.webp');
+    background-size: 100%;
+    background-position: 50% 70%;
+}
+
+.spinning-add-new {
+    background-image: url('../assets/spinning.webp');
+    background-size: 100%;
+    background-position: 50% 70%;
+}
+
+.crochet-add-new {
+    background-image: url('../assets/crochet.webp');
+    background-size: 100%;
+    background-position: 50% 70%;
+}
