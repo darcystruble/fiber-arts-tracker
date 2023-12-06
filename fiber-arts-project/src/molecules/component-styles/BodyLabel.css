@@ -1,8 +1,10 @@
 .body-label-container {
     width: 100%;
-    background-color: #D9DBDF;
+    /* background-color: #D9DBDF; */
+    background-color: #d2b4c1;
     padding: 20px;
 }
+
 h1 {
     margin: 0;
 }

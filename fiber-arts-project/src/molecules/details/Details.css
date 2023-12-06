@@ -1,8 +1,33 @@
-.detail-container {
+.detail-header {
+    color: #a2a2a2;
+    border-bottom: 2px solid #e2e2e2;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.back {
+    color: grey;
+}
+.details-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: grey;
+}
+.detail-outer {
     position: relative;
     display: flex;
     /* justify-content: space-between; */
+    
 }
+.detail-main, .detail-secondary {
+    margin-left: 30px;
+}
+/* sections */
+.tools, .pattern-details {
+    margin: 20px auto;
+}
+
+
 .detail {
     margin-bottom: 10px;
 }
@@ -11,20 +36,35 @@
     width: 300px;
 }
 
+/* .detail-main, .detail-secondary {
+    margin-left: 20px;
+} */
+
 .project-details {
-    /* margin: auto 20px; */
     display: flex;
     flex-direction: column;
 }
 
-/* .overlay {
-    background-color: rgba(255, 192, 203, 0.489);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.detail-btn {
+    width: 150px;
+    height: 40px;
+    margin: 5px auto;
+    background-color: pink;
+    border: 1px solid black;
+    /* border-radius: none; */
+}
+
+/* .delete-btn {
+
 } */
+
 .modal-outer {
     position: fixed;
     top: 50%;

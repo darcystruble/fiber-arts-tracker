@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { knitEdit } from "../../api/KnitEditDelete";
+import { crochetEdit } from "../../api/CrochetEditDelete";
 
 export default function KnitModal (props:{open: boolean, onClose: ()=> void, idKnit: string, details: any}) {
     const initialState = {
@@ -9,16 +9,14 @@ export default function KnitModal (props:{open: boolean, onClose: ()=> void, idK
         // image: '',
         completion_status: false,
         start_date: '',
-        pattern_name: 0,
-        pattern_designer: 0,
-        needle_type: '',
-        needle_size: '',
+        pattern_name: '',
+        pattern_designer: '',
+        hook_size: '',
       };
     const [formState, setFormState] = useState(initialState)
     // const [name, setName] = useState('')
 
-
-    console.log('start', props.details)
+    console.log('start', formState)
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormState({...formState, [e.target.id]: e.target.value})
         console.log(formState)
@@ -29,7 +27,7 @@ export default function KnitModal (props:{open: boolean, onClose: ()=> void, idK
         console.log(formState, props.idKnit)
         const editKnit = async () => {
             try {
-                const editKnit = await knitEdit(props.idKnit, formState)
+                const editKnit = await crochetEdit(props.idKnit, formState)
                 console.log('Updated knitting project:', editKnit)
             } catch (error) {
                 console.error('Error updating knitting project', error)
@@ -54,8 +52,7 @@ export default function KnitModal (props:{open: boolean, onClose: ()=> void, idK
                     {/* <input type="checkbox" id="completion_status" onChange={handleChange} defaultValue={props.details.completion_status} /> */}
                     <input type="text" id="pattern_name" onChange={handleChange} defaultValue={props.details.pattern_name} />
                     <input type="text" id="pattern_designer" onChange={handleChange} defaultValue={props.details.pattern_designer} />
-                    <input type="text" id="needle_type" onChange={handleChange} defaultValue={props.details.needle_type} />
-                    <input type="text" id="needle_size" onChange={handleChange} defaultValue={props.details.needle_size} />
+                    <input type="text" id="needle_type" onChange={handleChange} defaultValue={props.details.hook_size} />
                     <button type="submit">Update Project</button>
                 </form>
                 <button onClick={props.onClose}>Go Back</button>

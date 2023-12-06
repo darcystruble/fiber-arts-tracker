@@ -42,8 +42,8 @@ export default function NavList () {
                 </div>
                 <Link to='/stash'><h2>Stash</h2></Link>
                 <div className="clickables">
-                    <Clickable name={'Add Yarn'} goTo={'/stash/addyarn'} styleClass={"nav-links"} />
-                    <Clickable name={'Add Fiber'} goTo={'/stash/addfiber'} styleClass={"nav-links"} />
+                    <Clickable name={'Add Yarn'} goTo={'/stash/add/yarn'} styleClass={"nav-links"} />
+                    <Clickable name={'Add Fiber'} goTo={'/stash/add/fiber'} styleClass={"nav-links"} />
                     <Clickable name={'Yarn Stash'} goTo={'/stash/yarn'} styleClass={"nav-links"} />
                     <Clickable name={'Fiber Stash'} goTo={'/stash/fiber'} styleClass={"nav-links"} />
                 </div>

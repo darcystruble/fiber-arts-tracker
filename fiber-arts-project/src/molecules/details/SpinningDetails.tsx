@@ -2,6 +2,7 @@ import './Details.css'
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { spinOne, spinDelete } from "../../api/SpinEditDelete"
+import SpinModal from '../modals/SpinModal'
 // import moment from 'moment'
 
 export default function SpinDetails () {
@@ -13,7 +14,8 @@ export default function SpinDetails () {
     const navigate = useNavigate()
 
     const [detail, setDetail] = useState<any>({})
-    const [isComplete, setIsComplete] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
+    // const [isComplete, setIsComplete] = useState(false)
 
     // show details of one
     useEffect(()=> {
@@ -40,14 +42,6 @@ export default function SpinDetails () {
         navigate('..', { relative: 'path' })
     }
 
-    const checkboxChange = () => {
-        if (isComplete) {
-            setIsComplete(false)
-        } else {
-            setIsComplete(true)
-        }      
-    }
-
     return (
         <div className="detail-container">
             <div>
@@ -70,9 +64,8 @@ export default function SpinDetails () {
                 <div className="project-details">
                     <h2>Project Details</h2>
                     <div>Started: {detail.start_date}</div>
-                    <div>Complete: <input type="checkbox" onChange={checkboxChange} /> </div>
-                    {isComplete ? <div>Finished!</div> : <div>In progress</div>}
-                    <button className="update-project">Update Project</button>
+                    <button className="update-project" onClick={()=> setOpenModal(true)}>Update Project</button>
+                    <SpinModal open={openModal} onClose={() => setOpenModal(false)} idKnit={`${id}`} details={detail} />
                     <button className="delete-project" onClick={()=> {deleteOne()}}>Delete Project</button>
                 </div>
             </div>

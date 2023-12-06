@@ -25,18 +25,18 @@ export default function Crochet () {
 
     return (
         <div className='item-container'>
-            <h3>Crochet</h3>
             {loading ? <Loader/> : <div className="card-holder">
                 {crochet.map((cro)=> (
-                    <div key={cro.id} className="card">
-                        <Link to={`/projects/crochet/${cro.id}`}>
-                        <h4>{cro.name}</h4>
-                        <div>{cro.start_date}</div>
-                        <div className="img-holder">
-                            {cro.image ? <img src={cro.image} alt={cro.name} className="img" /> : null}
+                    <Link key={cro.id}to={`/projects/crochet/${cro.id}`} className='card-link'>
+                        <div className="card">
+                            <h4>{cro.name}</h4>
+                            <div className="img-holder">
+                                {cro.image ? <img src={cro.image} alt={cro.name} className="img" /> : null}
+                            </div>
+                            {cro.completion_status ? <div className='more-info'><b>Status:</b> Finished</div> : <div className='more-info'><b>Status:</b> Active</div>}
+                            <div className='see-more more-info'>See more information</div>
                         </div>
-                        </Link>
-                    </div>
+                    </Link>
                 ))}
                 </div>}
         </div>

@@ -12,8 +12,8 @@ export default function AddCrochetProject () {
         // image: '',
         completion_status: false,
         start_date: '',
-        pattern_name: 0,
-        pattern_designer: 0,
+        pattern_name: '',
+        pattern_designer: '',
         hook_size: '',
       };
     const [formState, setFormState] = useState(initialState)

@@ -25,19 +25,19 @@ export default function Yarn () {
 
     return (
         <div className='item-container'>
-            <h3>Yarn</h3>
+            <div className='title-holder'><Link to={'/stash/yarn'} className='mapped-title'>Yarn</Link></div>
             {loading ? <Loader/> : <div className="card-holder">
                 {yarn.map((yar)=> (
-                    <div key={yar.id} className="card">
-                        <Link to={`/stash/yarn/${yar.id}`}>
-                        <h4>{yar.name}</h4>
-                        <div className="img-holder">
-                            {yar.image ? <img src={yar.image} alt={yar.name} className="img" /> : null}
+                    <Link key={yar.id} to={`/stash/yarn/${yar.id}`} className='card-link'>
+                        <div className="card">
+                            <h4>{yar.name}</h4>
+                            <div className="img-holder">
+                                {yar.image ? <img src={yar.image} alt={yar.name} className="img" /> : null}
+                            </div>
+                            <div className='more-info'>{yar.brand}</div>
+                            <div className='see-more more-info'>See more infomration</div>
                         </div>
-                        <div>{yar.brand}</div>
-                        <div>{yar.content}</div>
-                        </Link>
-                    </div>
+                    </Link>
                 ))}
                 </div>}
         </div>

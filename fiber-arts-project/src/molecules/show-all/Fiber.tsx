@@ -25,19 +25,19 @@ export default function Fiber () {
 
     return (
         <div className='item-container'>
-            <h3>Fiber</h3>
+            <div className='title-holder'><Link to={'/stash/fiber'} className='mapped-title'>Fiber</Link></div>
             {loading ? <Loader/> : <div className="card-holder">
                 {fiber.map((fib)=> (
-                    <div key={fib.id} className="card">
-                        <Link to={`/stash/fiber/${fib.id}`}>
+                    <Link to={`/stash/fiber/${fib.id}`} key={fib.id} className='card-link'>
+                        <div className="card">
                             <h4>{fib.name}</h4>
                             <div className="img-holder">
                                 {fib.image ? <img src={fib.image} alt={fib.name} className="img" /> : null}
                             </div>
-                            <div>{fib.brand}</div>
-                            <div>{fib.content}</div>
-                        </Link>
-                    </div>
+                            <div className='more-info'>{fib.content}</div>
+                            <div className='see-more more-info'>See more information</div>
+                        </div>
+                    </Link>
                 ))}
                 </div>}
         </div>

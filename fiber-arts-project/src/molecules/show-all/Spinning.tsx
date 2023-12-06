@@ -25,18 +25,18 @@ export default function Spinning () {
 
     return (
         <div className='item-container'>
-            <h3>Spinning</h3>
             {loading ? <Loader/> : <div className="card-holder">
                 {spinning.map((spin)=> (
-                    <div key={spin.id} className="card">
-                        <Link to={`/projects/spinning/${spin.id}`}>
-                        <h4>{spin.name}</h4>
-                        <div className="img-holder">
-                            {spin.image ? <img src={spin.image} alt={spin.name} className="img" /> : null}
+                    <Link key={spin.id} to={`/projects/spinning/${spin.id}`} className='card-link'>
+                        <div className="card">
+                            <h4>{spin.name}</h4>
+                            <div className="img-holder">
+                                {spin.image ? <img src={spin.image} alt={spin.name} className="img" /> : null}
+                            </div>
+                            {spin.completion_status ? <div className='more-info'><b>Status:</b> Finished</div> : <div className='more-info'><b>Status:</b> Active</div>}
+                            <div className='see-more more-info'>See more information</div>
                         </div>
-                        <div>{spin.start_date}</div>
-                        </Link>
-                    </div>
+                    </Link>
                 ))}
                 </div>}
         </div>

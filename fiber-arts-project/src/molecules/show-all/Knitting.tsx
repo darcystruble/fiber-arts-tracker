@@ -24,18 +24,19 @@ export default function Knitting () {
     console.log(knitting)
     return (
         <div className='item-container'>
-            <h3>Knitting</h3>
+            {/* <div className='title-holder'><Link to={'/projects/knitting'} className='mapped-title'>Knitting</Link></div> */}
             {loading ? <Loader/> : <div className='card-holder'>
                 {knitting.map((knit)=> (
-                    <div key={knit.id} className="card">
-                        <Link to={`/projects/knitting/${knit.id}`}>
+                    <Link key={knit.id} to={`/projects/knitting/${knit.id}`} className='card-link'>
+                    <div className="card">    
                         <h4>{knit.name}</h4>
                         <div className="img-holder">
                             {knit.image ? <img src={knit.image} alt={knit.name} className="img" /> : null}
                         </div>
-                        <div>Started: {knit.start_date}</div>
-                        </Link>
+                        {knit.completion_status ? <div className='more-info'><b>Status:</b> Finished</div> : <div className='more-info'><b>Status:</b> Active</div>}
+                        <div className='see-more more-info'>See more information</div>    
                     </div>
+                    </Link>
                 ))}
                 </div>}
         </div>

@@ -3,7 +3,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-color: #D9DBDF;
+    /* background-color: #D9DBDF; */
+    /* background-color: #bb99a8; */
+    /* background-color: #d2b4c1; */
     box-sizing: border-box;
 }
 
@@ -12,8 +14,10 @@
     width: 100%;
     text-decoration: none;
     padding: 20px;
-    margin: 0 2px;
-    border-radius: 20px 20px 0 0;
+    border: 1px solid #d2d2d2;
+    border-bottom: none;
+    /* margin: 0 2px; */
+    /* border-radius: 20px 20px 0 0; */
 }
 
 .active {
@@ -23,9 +27,11 @@
 }
 
 .inactive {
-    color: var(--bg-color);
+    /* color: var(--bg-color); */
+    color: black;
     /* background-color: #BA6458; */
-    background-color: #a6a9ad;
+    /* background-color: #a6a9ad; */
+    background-color: #f2f2f2;
 }
 
 @media screen and (max-width: 420px) {

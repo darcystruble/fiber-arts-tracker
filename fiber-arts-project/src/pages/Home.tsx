@@ -1,4 +1,4 @@
-import './pages-styles/Home.css'
+import { Link } from 'react-router-dom'
 import GoalBar from '../atoms/GoalBar'
 import Knitting from '../molecules/show-all/Knitting'
 import Crochet from '../molecules/show-all/Crochet'
@@ -9,22 +9,45 @@ import Yarn from '../molecules/show-all/Yarn'
 export default function Home () {
     return (
         <div className="home-container">
-            <h2>Goals</h2>
-            <div className="section-info">
-                <GoalBar craft={'Knitting'} total={5} current={3} />
-                <GoalBar craft={'Spinning'} total={6} current={2} />
-                <GoalBar craft={'Crochet'} total={2} current={1.5} />
+            <h1>Welcome back. Let's craft!</h1>
+            <div className="home-sections">
+                <h2 className='section-title'>Goals</h2>
+                <div className="section-info">
+                    <GoalBar craft={'Knitting'} total={5} current={3} />
+                    <GoalBar craft={'Spinning'} total={6} current={2} />
+                    <GoalBar craft={'Crochet'} total={2} current={1.5} />
+                </div>
             </div>
-            <h2>Projects</h2>
-            <div className="section-info">
-                <Knitting />
-                <Spinning />
-                <Crochet />
+
+            <div className="home-sections">
+                <h2 className='section-title'>Projects</h2>
+                <div className="section-info">
+                    <div className="knitting">
+                        <div className='title-holder'><Link to={'/projects/knitting'} className='mapped-title'>Knitting</Link></div>
+                        <Knitting />
+                    </div>
+                    <div className="spinning">
+                        <div className='title-holder'><Link to={'/projects/spinning'} className='mapped-title'>Spinning</Link></div>
+                        <Spinning />
+                    </div>
+                    <div className="crochet">
+                        <div className='title-holder'><Link to={'/projects/crochet'} className='mapped-title'>Crochet</Link></div>
+                        <Crochet />
+                    </div>
+                </div>
             </div>
-            <h2>Stash</h2>
-            <div className="section-info">
-                <Fiber />
-                <Yarn />
+
+            <div className="home-sections">
+                <h2 className='section-title'>Stash</h2>
+                <div className="section-info">
+                    <div className="yarn">
+                        <Yarn />
+                    </div>
+
+                    <div className="fiber">
+                        <Fiber />
+                    </div>
+                </div>
             </div>
         </div>
     )
