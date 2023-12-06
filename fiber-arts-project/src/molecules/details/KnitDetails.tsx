@@ -2,6 +2,7 @@ import './Details.css'
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { knitOne, knitDelete } from "../../api/KnitEditDelete"
+import KnitModal from '../modals/KnitModal'
 // import moment from 'moment'
 
 export default function KnitDetails () {
@@ -9,11 +10,16 @@ export default function KnitDetails () {
         id: string
     }
     let { id } = useParams<KnitParams>()
-    console.log(id)
+    // console.log(id)
     const navigate = useNavigate()
 
     const [detail, setDetail] = useState<any>({})
-    const [isComplete, setIsComplete] = useState(false)
+    // const [isComplete, setIsComplete] = useState(false)
+    // const [open, setOpen] = useState(false)
+    // const [date, setDate] = useState('')
+    const [openModal, setOpenModal] = useState(false)
+    // const [formState, setFormState] = useState(detail)
+    // console.log('test',formState)
 
     // show details of one
     useEffect(()=> {
@@ -21,6 +27,8 @@ export default function KnitDetails () {
             try {
                 const res = await knitOne(`${id}`)
                 setDetail(res)
+                console.log('res:', res)
+                // setIsComplete(res.completion_status)
             } catch (e) {
                 console.error('Error getting knitting detail', e)
             }
@@ -30,6 +38,21 @@ export default function KnitDetails () {
     console.log(detail)
 
     // update one
+    // const checkboxChange = () => {
+    //     setOpen(!open) 
+    // }
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setDate(e.target.value)
+    //     console.log('change:', date)
+    // }
+    // const updateStatus = () => {
+    //     const findAndUpdate = async () => {
+    //         await knitEdit(`${id}`, { completion_status: !isComplete })
+    //         setIsComplete(!isComplete)
+    //     }
+    //     findAndUpdate()
+    //     setOpen(!open)
+    // }
 
     // delete one
     const deleteOne = () => {
@@ -40,13 +63,30 @@ export default function KnitDetails () {
         navigate('..', { relative: 'path' })
     }
 
-    const checkboxChange = () => {
-        if (isComplete) {
-            setIsComplete(false)
-        } else {
-            setIsComplete(true)
-        }      
-    }
+    // testing this
+
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setFormState({...formState, [e.target.id]: e.target.value})
+    //     console.log(formState)
+    // }
+
+    // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault()
+    //     console.log(formState, id)
+    //     const editKnit = async () => {
+    //         try {
+    //             const editKnit = await knitEdit(`${id}/`, formState)
+    //             console.log('Updated knitting project:', editKnit)
+    //         } catch (error) {
+    //             console.error('Error updating knitting project', error)
+    //         }
+    //     }
+    //     editKnit()
+    //     // navigate('/projects/knitting', { replace: true })
+    //     const close = () => {setOpenModal(false)}
+    //     close()
+    // }
+
 
     return (
         <div className="detail-container">
@@ -70,9 +110,21 @@ export default function KnitDetails () {
                 <div className="project-details">
                     <h2>Project Details</h2>
                     <div>Started: {detail.start_date}</div>
-                    <div>Complete: <input type="checkbox" onChange={checkboxChange} /> </div>
-                    {isComplete ? <div>Finished!</div> : <div>In progress</div>}
-                    <button className="update-project">Update Project</button>
+                    {/* <div>Complete: <input type="checkbox" onChange={checkboxChange} /> </div>
+                    {open ? <div>Finished! <input type="date" onChange={handleChange} /> <button onClick={updateStatus}>Save Finished Date</button> </div> : <div>In progress</div>} */}
+                    {/* {isComplete ? <div>Completed: {detail.end_date}</div> : null} */}
+                    <button className="update-project" onClick={()=> setOpenModal(true)}>Update Project</button>
+                    <KnitModal open={openModal} onClose={() => setOpenModal(false)} idKnit={`${id}`} details={detail} />
+
+                    {/* {!openModal ? null : <div className="modal-outer">
+                        Hello. This is a modal
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" id="name" onChange={handleChange} defaultValue={detail.name} />
+                            <button type="submit">Update Project</button>
+                        </form>
+                        <button onClick={() => setOpenModal(false)}>Go Back</button>
+                    </div>} */}
+
                     <button className="delete-project" onClick={()=> {deleteOne()}}>Delete Project</button>
                 </div>
             </div>
