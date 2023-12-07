@@ -25,7 +25,7 @@ export default function Yarn () {
 
     return (
         <div className='item-container'>
-            <div className='title-holder'><Link to={'/stash/yarn'} className='mapped-title'>Yarn</Link></div>
+            {/* <div className='title-holder'><Link to={'/stash/yarn'} className='mapped-title'>Yarn</Link></div> */}
             {loading ? <Loader/> : <div className="card-holder">
                 {yarn.map((yar)=> (
                     <Link key={yar.id} to={`/stash/yarn/${yar.id}`} className='card-link'>

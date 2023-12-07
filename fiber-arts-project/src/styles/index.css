@@ -9,6 +9,9 @@
     /* colors */
     --bg-color: #ffffff;
     --dark-bg-color: #3f2d3e;
+    --mauve: #d2b4c1;
+    --black: #313131;
+    --grey: #9e9e9e;
     /* fonts */
     --main-font: 'Poppins', sans-serif;
     --accent-font: 'Lora', serif;
@@ -56,16 +59,16 @@ h1, h2 {
     /* background-color: #faf8f3; */
 }
 
-.home-container, .projects-container, .add-container, .detail-container {
+.home-container, .projects-container, .add-container, .detail-container, .stash-container, .goals-container, .account-container {
     padding: 20px;
 }
 
 .add-container button {
-    width: 100px;
+    width: 150px;
     height: 40px;
-    background-color: pink;
-    border: 2px solid pink;
-    border-radius: 14px;
+    background-color: var(--mauve);
+    border: 1px solid var(--dark-bg-color);
+    /* border-radius: 14px; */
 }
 
 @media screen and (max-width: 420px) {

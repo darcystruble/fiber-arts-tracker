@@ -1,7 +1,7 @@
 .body-label-container {
     width: 100%;
     /* background-color: #D9DBDF; */
-    background-color: #d2b4c1;
+    background-color: var(--mauve);
     padding: 20px;
 }
 

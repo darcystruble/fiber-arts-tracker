@@ -73,7 +73,6 @@ export default function SpinDetails () {
                 <div className='detail-secondary'>
                     <div className="project-details">
                         <div className='details-title'>Project Details</div>
-                        
                         <div>Started: {detail.start_date}</div>
                         {detail.completion_status ? <div><div>Status: Finished</div><div>Date Finished: {detail.end_date}</div></div> : <div >Status: Active</div>}
 

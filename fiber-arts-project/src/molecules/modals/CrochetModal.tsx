@@ -44,18 +44,24 @@ export default function KnitModal (props:{open: boolean, onClose: ()=> void, idK
     return (
         <div>
             <div className="modal-outer">
-                Hello. This is a modal
-                <form onSubmit={handleSubmit}>
+                <h2>Edit Project:</h2>
+                <form onSubmit={handleSubmit} className="modal-form">
+                    <label htmlFor="name">Project name:</label>
                     <input type="text" id="name" onChange={handleChange} defaultValue={props.details.name} />
+                    <label htmlFor="brand">Brand:</label>
                     <input type="text" id="brand" onChange={handleChange} defaultValue={props.details.brand} />
+                    <label htmlFor="start_date">Start date:</label>
                     <input type="date" id="start_date" onChange={handleChange} defaultValue={props.details.date} />
                     {/* <input type="checkbox" id="completion_status" onChange={handleChange} defaultValue={props.details.completion_status} /> */}
+                    <label htmlFor="pattern_name">Pattern name:</label>
                     <input type="text" id="pattern_name" onChange={handleChange} defaultValue={props.details.pattern_name} />
+                    <label htmlFor="pattern_designer">Pattern designer:</label>
                     <input type="text" id="pattern_designer" onChange={handleChange} defaultValue={props.details.pattern_designer} />
-                    <input type="text" id="needle_type" onChange={handleChange} defaultValue={props.details.hook_size} />
-                    <button type="submit">Update Project</button>
+                    <label htmlFor="hook_size">Hook size:</label>
+                    <input type="text" id="hook_size" onChange={handleChange} defaultValue={props.details.hook_size} />
+                    <button type="submit" className="detail-btn">Update Project</button>
                 </form>
-                <button onClick={props.onClose}>Go Back</button>
+                <button onClick={props.onClose} className="detail-btn">Go Back</button>
             </div>
         </div>
     )

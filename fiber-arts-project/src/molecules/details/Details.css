@@ -6,12 +6,12 @@
     justify-content: space-between;
 }
 .back {
-    color: grey;
+    color: var(--grey);
 }
 .details-title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: grey;
+    color: var(--grey);
 }
 .detail-outer {
     position: relative;
@@ -56,8 +56,8 @@
     width: 150px;
     height: 40px;
     margin: 5px auto;
-    background-color: pink;
-    border: 1px solid black;
+    background-color: var(--mauve);
+    border: 1px solid var(--dark-bg-color);
     /* border-radius: none; */
 }
 
@@ -73,11 +73,21 @@
 
     width: 60%;
     padding: 20px;
-    background-color: orange;
-    border-radius: 15px;
+    background-color: #e2e2e2;
+    /* border-radius: 15px; */
     
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.modal-form input {
+    height: 30px;
+    margin-bottom: 10px;
 }

@@ -43,18 +43,23 @@ export default function KnitModal (props:{open: boolean, onClose: ()=> void, idK
     return (
         <div>
             <div className="modal-outer">
-                Hello. This is a modal
-                <form onSubmit={handleSubmit}>
+                
+                <form onSubmit={handleSubmit} className="modal-form">
+                    <label htmlFor="name">Project name:</label>
                     <input type="text" id="name" onChange={handleChange} defaultValue={props.details.name} />
+                    <label htmlFor="brand">Brand:</label>
                     <input type="text" id="brand" onChange={handleChange} defaultValue={props.details.brand} />
+                    <label htmlFor="start_date">Start date:</label>
                     <input type="date" id="start_date" onChange={handleChange} defaultValue={props.details.date} />
                     {/* <input type="checkbox" id="completion_status" onChange={handleChange} defaultValue={props.details.completion_status} /> */}
+                    <label htmlFor="singles_weight">Singles Weight:</label>
                     <input type="text" id="singles_weight" onChange={handleChange} defaultValue={props.details.singles_weight} />
+                    <label htmlFor="ply">Ply:</label>
                     <input type="text" id="ply" onChange={handleChange} defaultValue={props.details.ply} />
 
-                    <button type="submit">Update Project</button>
+                    <button type="submit" className="detail-btn">Update Project</button>
                 </form>
-                <button onClick={props.onClose}>Go Back</button>
+                <button onClick={props.onClose} className="detail-btn">Go Back</button>
             </div>
         </div>
     )

@@ -25,7 +25,7 @@ export default function Fiber () {
 
     return (
         <div className='item-container'>
-            <div className='title-holder'><Link to={'/stash/fiber'} className='mapped-title'>Fiber</Link></div>
+            {/* <div className='title-holder'><Link to={'/stash/fiber'} className='mapped-title'>Fiber</Link></div> */}
             {loading ? <Loader/> : <div className="card-holder">
                 {fiber.map((fib)=> (
                     <Link to={`/stash/fiber/${fib.id}`} key={fib.id} className='card-link'>

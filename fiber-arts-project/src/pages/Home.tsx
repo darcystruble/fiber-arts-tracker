@@ -41,10 +41,12 @@ export default function Home () {
                 <h2 className='section-title'>Stash</h2>
                 <div className="section-info">
                     <div className="yarn">
+                        <div className='title-holder'><Link to={'/stash/yarn'} className='mapped-title'>Yarn</Link></div>
                         <Yarn />
                     </div>
 
                     <div className="fiber">
+                        <div className='title-holder'><Link to={'/stash/fiber'} className='mapped-title'>Fiber</Link></div>
                         <Fiber />
                     </div>
                 </div>
