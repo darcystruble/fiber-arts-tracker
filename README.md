@@ -1,5 +1,5 @@
 # Fiber Arts Project Management
-[Teachnologies](#technologies) * [ERD](#erd) * [Wireframe](#wireframe)
+[Teachnologies](#technologies) * [Screenshots](#sreenshots) * [ERD](#erd) * [Wireframe](#wireframe) 
 
 An app that allows the user to track many aspects of their making/crafting journey. A user can track their yarn/fiber stash. They can track projects in 3 categories: knitting, crochet and spinning and see how they are using their crafting time.
 
@@ -17,7 +17,18 @@ A user can:
 Planning to use:
 - React w/ Typescript
 - PostgreSQL, Django
-- Bootstrap
+
+### Sreenshots
+![Home page](/assets/home-page.png)
+
+![Add New Project](/assets/add-new-project.png)
+
+![View a project](/assets/view-project.png)
+
+![Edit project](/assets/edit-project.png)
+
+![Cell phone view](/assets/cell-view.png)
+
 
 ### ERD
 ![ERD](/assets/Final-Project-Fiber-Tracker-Page-3.drawio.png)
