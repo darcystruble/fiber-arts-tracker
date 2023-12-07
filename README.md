@@ -37,4 +37,6 @@ There are 4 main table types, with users and goals being straight forward. The p
 ![ERD](/assets/Final-Project-Fiber-Tracker-Page-3.drawio.png)
 
 ### Wireframe
+
+Below is a basic rendering of a wireframe used to help understand the basic layout of the app.
 ![Wireframes](/assets/fiber-art-figma.png)
